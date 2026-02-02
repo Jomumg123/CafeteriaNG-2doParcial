@@ -1,0 +1,500 @@
+/* Importación de Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Variables CSS */
+:root {
+    --color-principal: #6F4E37; 
+    --color-secundario: #C39977; 
+    --color-fondo: #F5F5DC; 
+    --color-texto: #333333;
+    --color-acento: #A0522D; 
+}
+
+/* --- Estilos Generales y Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-principal);
+    margin-bottom: 0.5em;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 40px 0;
+}
+
+/* --- Encabezado y Navegación (Header & Nav) --- */
+
+.main-header {
+    background-color: var(--color-fondo);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding: 15px 0;
+    text-align: center; 
+    transition: padding 0.3s ease-in-out; 
+}
+
+/* Estilo para el header al hacer scroll (Usado por JS) */
+.main-header.header-scrolled {
+    padding: 10px 0; 
+}
+
+.main-header h1 {
+    display: none; 
+}
+
+.logo-img {
+    width: 200px; 
+    height: auto;
+    display: block; 
+    margin: 0 auto;
+    border-radius: 50%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease-in-out; 
+}
+
+.logo-img:hover {
+    transform: scale(1.05); 
+}
+
+.main-nav-bar {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+    margin-bottom: 10px; 
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 700;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover, .nav-list a.active {
+    color: var(--color-principal);
+    border-bottom: 2px solid var(--color-principal);
+}
+
+/* --- Sección Principal (Home/Hero) --- */
+
+.hero-homepage {
+    background-image:url('../img/ambiente.png');
+    background-size: cover;
+    background-position: center;
+    height: 70vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.hero-homepage::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2; 
+    max-width: 800px;
+    padding: 50px 20px; 
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    color: white;
+    text-shadow: 2px 2px 4px #333;
+    margin-bottom: 15px;
+    letter-spacing: 2px; 
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Botón de Llamada a la Acción (CTA) */
+.cta-button {
+    background-color: var(--color-principal); 
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: var(--color-acento);
+}
+
+/* --- Sección de Menú --- */
+
+.hero-menu-banner {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--color-secundario);
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.hero-menu-banner h2 {
+    color: white;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.menu-catalogo h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.menu-catalogo h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-acento);
+}
+
+.menu-category {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.menu-category h4 {
+    color: var(--color-principal);
+    border-bottom: 2px solid var(--color-fondo);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.menu-item-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo adicional para destacar ítem (usado por JS) */
+.menu-item.is-highlighted {
+    border-color: var(--color-principal); 
+    background-color: var(--color-fondo); 
+    box-shadow: 0 0 10px rgba(111, 78, 55, 0.3); 
+}
+
+.menu-item img {
+    width: 100px; 
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 50%; 
+    border: 3px solid var(--color-secundario);
+}
+
+.price {
+    font-weight: 700;
+    color: var(--color-acento);
+    font-size: 1.3em;
+    padding: 5px 10px;
+    border: 1px dashed var(--color-acento);
+    border-radius: 4px;
+}
+
+/* Sección Ubicación */
+.location-section {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.map-placeholder {
+    margin-top: 20px;
+    border: 4px solid var(--color-principal);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- Formulario de Contacto --- */
+
+.contact-section {
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 700px; 
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-section h2, .contact-section h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contact-form div {
+    margin-bottom: 15px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+textarea:focus,
+select:focus {
+    border-color: var(--color-principal);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px; 
+}
+
+.form-button:hover {
+    background-color: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+.feedback-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+/* --- Botones de Administración (CRUD) --- */
+.btn-admin-edit, .btn-admin-delete {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin: 5px 2px;
+    transition: opacity 0.3s;
+}
+
+.btn-admin-edit {
+    background-color: var(--color-secundario);
+    color: white !important;
+}
+
+.btn-admin-delete {
+    background-color: var(--color-principal);
+    color: white !important;
+}
+
+.btn-admin-edit:hover, .btn-admin-delete:hover {
+    opacity: 0.8;
+}
+
+/* --- Pie de Página (Footer) --- */
+.main-footer {
+    background-color: var(--color-principal);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    filter: invert(1); 
+}
+
+.footer-logo {
+    width: 60px; 
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto; 
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+}
+/* --- Estilos para el Formulario de Registro (Crear/Editar) --- */
+.flex-admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Para que quede centrado entre header y footer */
+    padding: 40px 20px;
+}
+
+.card-formulario {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid #eaddcf;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card-formulario h2 {
+    font-family: 'Playfair Display', serif;
+    color: #4a332d;
+    margin-bottom: 25px;
+}
+
+.input-admin {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #dcd0c0;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.btn-guardar-admin {
+    background-color: #6F4E37; /* Color igualado al footer */
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-guardar-admin:hover {
+    background-color: #d4a373; /* Cambio a ocre al pasar el mouse */
+}
+        .volver-link {
+            display: block;
+            margin-top: 20px;
+            color: #a98467;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .volver-link:hover {
+            text-decoration: underline;
+        }
+
+
+/* --- Media Query para Responsividad (Móviles) --- */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 8px;
+    }
+
+    .hero-menu-banner h2 {
+        font-size: 1.8em;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+}
