@@ -517,54 +517,23 @@ textarea {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-/* =======================================================
-   ESTILOS PARA MÓVIL (MENU HAMBURGUESA Y LOGIN)
-   ======================================================= */
 
-/* 1. Ocultar el botón hamburguesa en PC 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1100;
-}
-
-.menu-toggle .bar {
-    width: 30px;
-    height: 3px;
-    background-color: #6F4E37; /* Tu color principal 
-    border-radius: 10px;
-    transition: all 0.3s linear;
-}*/
-
-/* 2. Media Query para tablets y celulares */
+/* --- Media Query para Responsividad (Móviles) --- */
 @media (max-width: 992px) {
-    
-    /* Mostrar botón hamburguesa */
-    .menu-toggle {
-        display: flex;
-    }
-
-    /* Convertir el menú en lista desplegable vertical */
+    /* 1. Ocultamos el menú horizontal para que no se amontone con el logo */
     .nav-container {
         display: none; 
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #F5F5DC; /* Tu color de fondo */
+        background-color: #F5F5DC;
         flex-direction: column;
         padding: 20px 0;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     }
 
-    /* Clase que activa el JS para mostrar el menú */
+    /* Clase para mostrar el menú cuando lo actives con JS */
     .nav-container.active {
         display: flex;
     }
@@ -575,52 +544,31 @@ textarea {
         gap: 20px;
     }
 
-    /* Ajuste del Formulario de Login para que no sea pequeño */
+    /* 2. AJUSTE DEL LOGIN: Evita que el formulario se vea como en PC */
     .card-formulario {
-        width: 95% !important; 
+        width: 90% !important; /* Ocupa casi todo el ancho del móvil */
         max-width: none !important;
-        margin: 10px auto !important;
+        margin: 20px auto !important;
+        padding: 25px !important;
     }
 
-    /* Animación de las 3 líneas a una "X" */
-    .menu-toggle.is-active .bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+    /* 3. Ajustes de texto para que no se desborden */
+    .hero-content h2 {
+        font-size: 2.2em;
     }
-    .menu-toggle.is-active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.is-active .bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+
+    .brand-text h1 {
+        font-size: 1.6rem !important;
     }
 }
 
-/* Ajustes para pantallas muy pequeñas (iPhone/Android) */
+/* Ajustes extra para pantallas muy pequeñas */
 @media (max-width: 480px) {
     .brand-text h1 {
-        font-size: 1.5rem !important;
+        font-size: 1.3rem !important;
     }
     .logo-img {
         width: 55px !important;
         height: 55px !important;
     }
 }
-/* --- Media Query para Responsividad (Móviles) --- 
-@media (max-width: 768px) {
-    .nav-list {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .nav-list a {
-        display: block;
-        padding: 8px;
-    }
-
-    .hero-menu-banner h2 {
-        font-size: 1.8em;
-    }
-
-    .hero-content h2 {
-        font-size: 2.5em;
-    }
-}*/
