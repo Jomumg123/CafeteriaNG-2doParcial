@@ -1,11 +1,11 @@
 <?php
 class Database {
     // Leemos las variables que acabas de poner en Render
-    private $host = getenv('DB_HOST') ?: "localhost";
-    private $db_name = getenv('DB_NAME') ?: "tu_base_local";
-    private $username = getenv('DB_USER') ?: "root";
-    private $password = getenv('DB_PASS') ?: "";
-    private $port = getenv('DB_PORT') ?: "3306";
+    private $host = getenv('DB_HOST') ?: "gateway01.us-east-1.prod.aws.tidbcloud.com";
+    private $db_name = getenv('DB_NAME') ?: "test";
+    private $username = getenv('DB_USER') ?: "5UVkaYG7qFHDErc.root";
+    private $password = getenv('DB_PASS') ?: "GqnKD6xYlIleYKtT";
+    private $port = getenv('DB_PORT') ?: "4000";
     public $conn;
 
     public function getConnection() {
