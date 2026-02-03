@@ -8,23 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header class="main-header">
-        <div class="header-logo-container">
-            <img src="img/logo3.png" alt="Logo Coffee Bliss" class="logo-img">
-            <h1>Coffee NG</h1> 
-        </div>
-        <nav class="main-nav-bar">
-                <ul class="nav-list">
-                    <li><a href="index.php" class="active">Inicio</a></li>
-                    
-                    <li><a href="index.php?action=menu">Menú</a></li>
-                    
-                    <li><a href="index.php?action=contacto">Contacto y Pedidos</a></li>
-                </ul>
-        </nav>
-    </header>
-
+    <?php include '../app/views/includes/header.php'; ?>
     <main>
         
         <section class="contact-section">
@@ -84,14 +68,7 @@
         
     </main>
 
-    <footer class="main-footer">
-        <img src="img/logo3.png" alt="Logo Coffee NG" class="footer-logo">
-        <p>&copy; 2025 Coffee NG. Todos los derechos reservados.</p>
-        <div class="social-links">
-            <a href="#"><img src="img/facebook.svg" alt="Facebook" width="24" height="24"></a>
-            <a href="#"><img src="img/instagram.svg" alt="Instagram" width="24" height="24"></a>
-        </div>
-    </footer>
+    <?php include '../app/views/includes/footer.php'; ?>
 
     <script src="js/script.js"></script>
 </body>

@@ -3,11 +3,11 @@
 
 /* Variables CSS */
 :root {
-    --color-principal: #6F4E37; 
-    --color-secundario: #C39977; 
-    --color-fondo: #F5F5DC; 
+    --color-principal: #6F4E37;
+    --color-secundario: #C39977;
+    --color-fondo: #F5F5DC;
     --color-texto: #333333;
-    --color-acento: #A0522D; 
+    --color-acento: #A0522D;
 }
 
 /* --- Estilos Generales y Reset --- */
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5 {
 main {
     padding: 20px;
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 hr {
@@ -44,36 +44,35 @@ hr {
 }
 
 /* --- Encabezado y Navegación (Header & Nav) --- */
-
 .main-header {
-    background-color: var(--color-fondo);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    padding: 15px 0;
-    text-align: center; 
-    transition: padding 0.3s ease-in-out; 
+    display: flex;
+    flex-wrap: wrap; /* Permite que en móviles se acomode mejor */
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
 }
 
 /* Estilo para el header al hacer scroll (Usado por JS) */
 .main-header.header-scrolled {
-    padding: 10px 0; 
+    padding: 10px 0;
 }
 
 .main-header h1 {
-    display: none; 
+    display: block !important;
 }
 
 .logo-img {
-    width: 200px; 
+    width: 200px;
     height: auto;
-    display: block; 
+    display: block;
     margin: 0 auto;
-    border-radius: 50%; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s ease-in-out; 
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 .logo-img:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .main-nav-bar {
@@ -84,9 +83,9 @@ hr {
 .nav-list {
     list-style: none;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     gap: 30px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .nav-list a {
@@ -99,16 +98,16 @@ hr {
 
 .nav-list a:hover, .nav-list a.active {
     color: var(--color-principal);
-    border-bottom: 2px solid var(--color-principal);
+    border-bottom: 3px solid var(--color-principal);
+    padding-bottom: 2px; /* Espacio entre el texto y la línea */
 }
 
 /* --- Sección Principal (Home/Hero) --- */
-
 .hero-homepage {
     background-image:url('../img/ambiente.png');
     background-size: cover;
     background-position: center;
-    height: 70vh; 
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,14 +121,14 @@ hr {
     content: '';
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: rgba(0, 0, 0, 0.4); 
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
 .hero-content {
-    z-index: 2; 
+    z-index: 2;
     max-width: 800px;
-    padding: 50px 20px; 
+    padding: 50px 20px;
 }
 
 .hero-content h2 {
@@ -137,7 +136,7 @@ hr {
     color: white;
     text-shadow: 2px 2px 4px #333;
     margin-bottom: 15px;
-    letter-spacing: 2px; 
+    letter-spacing: 2px;
 }
 
 .hero-content p {
@@ -148,7 +147,7 @@ hr {
 
 /* Botón de Llamada a la Acción (CTA) */
 .cta-button {
-    background-color: var(--color-principal); 
+    background-color: var(--color-principal);
     color: white;
     padding: 15px 30px;
     text-decoration: none;
@@ -164,7 +163,6 @@ hr {
 }
 
 /* --- Sección de Menú --- */
-
 .hero-menu-banner {
     text-align: center;
     padding: 40px 20px;
@@ -240,17 +238,17 @@ hr {
 
 /* Estilo adicional para destacar ítem (usado por JS) */
 .menu-item.is-highlighted {
-    border-color: var(--color-principal); 
-    background-color: var(--color-fondo); 
-    box-shadow: 0 0 10px rgba(111, 78, 55, 0.3); 
+    border-color: var(--color-principal);
+    background-color: var(--color-fondo);
+    box-shadow: 0 0 10px rgba(111, 78, 55, 0.3);
 }
 
 .menu-item img {
-    width: 100px; 
+    width: 100px;
     height: 100px;
     object-fit: cover;
     margin-bottom: 10px;
-    border-radius: 50%; 
+    border-radius: 50%;
     border: 3px solid var(--color-secundario);
 }
 
@@ -277,12 +275,11 @@ hr {
 }
 
 /* --- Formulario de Contacto --- */
-
 .contact-section {
     padding: 40px 20px;
     background-color: white;
     border-radius: 8px;
-    max-width: 700px; 
+    max-width: 700px;
     margin: 30px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
@@ -293,7 +290,7 @@ hr {
 }
 
 .contact-form div {
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
 }
 
 label {
@@ -303,8 +300,8 @@ label {
     color: var(--color-texto);
 }
 
-input[type="text"], 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
 textarea,
 select {
     width: 100%;
@@ -316,8 +313,8 @@ select {
     transition: border-color 0.3s;
 }
 
-input[type="text"]:focus, 
-input[type="email"]:focus, 
+input[type="text"]:focus,
+input[type="email"]:focus,
 textarea:focus,
 select:focus {
     border-color: var(--color-principal);
@@ -341,7 +338,7 @@ textarea {
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 .form-button:hover {
@@ -354,6 +351,7 @@ textarea {
     padding-top: 20px;
     border-top: 1px dashed #ddd;
 }
+
 /* --- Botones de Administración (CRUD) --- */
 .btn-admin-edit, .btn-admin-delete {
     display: inline-block;
@@ -400,16 +398,17 @@ textarea {
 }
 
 .social-links img {
-    filter: invert(1); 
+    filter: invert(1);
 }
 
 .footer-logo {
-    width: 60px; 
+    width: 60px;
     height: auto;
     display: block;
-    margin: 0 auto 10px auto; 
+    margin: 0 auto 10px auto;
     filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 }
+
 /* --- Estilos para el Formulario de Registro (Crear/Editar) --- */
 .flex-admin-container {
     display: flex;
@@ -462,20 +461,57 @@ textarea {
 .btn-guardar-admin:hover {
     background-color: #d4a373; /* Cambio a ocre al pasar el mouse */
 }
-        .volver-link {
-            display: block;
-            margin-top: 20px;
-            color: #a98467;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
 
-        .volver-link:hover {
-            text-decoration: underline;
-        }
+.volver-link {
+    display: block;
+    margin-top: 20px;
+    color: #a98467;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
 
+.volver-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilo para el Botón Acceder --- */
+.btn-acceder {
+    background-color: var(--color-principal);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-acceder:hover {
+    background-color: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+/* --- Caja de Usuario Logueado (Pill) --- */
+.user-logged-box {
+    display: flex;
+    align-items: center;
+    background: #fdf5e6;
+    padding: 6px 15px;
+    border-radius: 30px;
+    border: 1px solid var(--color-secundario);
+    gap: 12px;
+}
+
+.user-logged-box img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-secundario);
+}
 
 /* --- Media Query para Responsividad (Móviles) --- */
 @media (max-width: 768px) {
@@ -492,9 +528,8 @@ textarea {
     .hero-menu-banner h2 {
         font-size: 1.8em;
     }
-    
+
     .hero-content h2 {
         font-size: 2.5em;
     }
-
 }

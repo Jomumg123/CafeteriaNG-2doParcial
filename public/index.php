@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 require_once "../app/config/db.php";
 require_once "../app/models/Producto.php";
 require_once "../app/controllers/ProductoController.php";
+require_once "../app/controllers/AuthController.php";
+$auth = new AuthController();
 
 $controller = new ProductoController();
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
@@ -14,6 +16,21 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 // echo "Acción actual: " . $action; 
 
 switch ($action) {
+    case 'registro':
+        $auth->mostrarRegistro();
+        break;
+    case 'guardar_usuario':
+        $auth->procesarRegistro();
+        break;
+    case 'login':
+        $auth->mostrarLogin();
+        break;
+    case 'procesar_login':
+        $auth->procesarLogin();
+        break;
+    case 'logout':
+        $auth->logout();
+        break;
     case 'menu':
         $controller->mostrarMenu();
         break;

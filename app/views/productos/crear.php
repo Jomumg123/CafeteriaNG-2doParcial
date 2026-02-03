@@ -8,26 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header class="main-header">
-        <div class="header-logo-container">
-            <img src="img/logo3.png" alt="Logo Coffee NG" class="logo-img">
-            <h1>Coffee NG</h1> 
-        </div>
-        <nav class="main-nav-bar">
-            <ul class="nav-list">
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="index.php?action=menu">Menú</a></li>
-                <li><a href="index.php?action=contacto">Contacto y Pedidos</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include '../app/views/includes/header.php'; ?>
 
     <main class="flex-admin-container">
         <div class="card-formulario">
             <h2>Agregar Nuevo Café o Postre</h2>
             
-            <form action="index.php?action=guardar" method="POST">
+            <form action="index.php?action=guardar" method="POST" enctype="multipart/form-data">
+                
                 <input type="text" name="nombre" class="input-admin" placeholder="Nombre del producto" required>
                 
                 <textarea name="descripcion" class="input-admin" rows="3" placeholder="Descripción"></textarea>
@@ -40,16 +28,16 @@
                     <option value="Postres">Postres</option>
                 </select>
 
+                <div style="text-align: left; margin-bottom: 15px;">
+                    <label style="display: block; font-size: 0.8em; color: #4a332d; font-weight: bold; margin-bottom: 5px;">Imagen del Producto</label>
+                    <input type="file" name="imagen" class="input-admin" accept="image/*">
+                </div>
+
                 <button type="submit" class="btn-guardar-admin">Guardar Producto</button>
                 <a href="index.php?action=menu" class="volver-link">Volver al Menú</a>
             </form>
         </div>
     </main>
-
-    <footer class="main-footer">
-        <img src="img/logo3.png" alt="Logo Coffee NG" class="footer-logo">
-        <p>© 2025 Coffee NG. Todos los derechos reservados.</p>
-    </footer>
-
+    <?php include '../app/views/includes/footer.php'; ?>
 </body>
 </html>

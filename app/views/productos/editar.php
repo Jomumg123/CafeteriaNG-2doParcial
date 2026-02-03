@@ -8,26 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header class="main-header">
-        <div class="header-logo-container">
-            <img src="img/logo3.png" alt="Logo Coffee NG" class="logo-img">
-            <h1>Coffee NG</h1> 
-        </div>
-        <nav class="main-nav-bar">
-            <ul class="nav-list">
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="index.php?action=menu">Menú</a></li>
-                <li><a href="index.php?action=contacto">Contacto y Pedidos</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <?php include '../app/views/includes/header.php'; ?>
     <main class="flex-admin-container">
         <div class="card-formulario">
             <h2>Editar Café o Postre</h2>
             
-            <form action="index.php?action=actualizar" method="POST">
+            <form action="index.php?action=actualizar" method="POST" enctype="multipart/form-data">
                 
                 <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
 
@@ -56,16 +42,24 @@
                     <option value="Postres" <?php echo ($producto['categoria'] == 'Postres') ? 'selected' : ''; ?>>Postres</option>
                 </select>
 
+                <div style="text-align: left; margin: 15px 0;">
+                    <label style="display: block; font-size: 0.8em; color: #4a332d; font-weight: bold; margin-bottom: 10px;">Imagen Actual:</label>
+                    <div style="text-align: center; margin-bottom: 10px;">
+                        <img src="img/uploads/<?php echo $producto['imagen']; ?>" 
+                             alt="Vista previa" 
+                             style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px; border: 2px solid #d4a373;">
+                    </div>
+
+                    <label style="display: block; font-size: 0.8em; color: #4a332d; font-weight: bold; margin-bottom: 5px;">Cambiar Imagen:</label>
+                    <input type="file" name="imagen" class="input-admin" accept="image/*">
+                    <small style="display: block; color: #888; font-size: 0.7em;">Deje vacío para mantener la imagen actual.</small>
+                </div>
+
                 <button type="submit" class="btn-guardar-admin">Actualizar Cambios</button>
-                <a href="index.php?action=menu" class="volver-link">Cancelar y Volver</a>
+                <a href="index.php?action=menu" class="volver-link" style="display: block; margin-top: 15px; text-decoration: none; color: #6f4e37; font-size: 0.9em;">Cancelar y Volver</a>
             </form>
         </div>
     </main>
-
-    <footer class="main-footer">
-        <img src="img/logo3.png" alt="Logo Coffee NG" class="footer-logo">
-        <p>© 2025 Coffee NG. Todos los derechos reservados.</p>
-    </footer>
-
+    <?php include '../app/views/includes/footer.php'; ?>
 </body>
 </html>
