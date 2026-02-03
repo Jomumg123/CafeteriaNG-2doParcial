@@ -23,14 +23,13 @@ $current_action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
     <nav style="flex: 2; display: flex; justify-content: center;">
         <ul class="nav-list" style="display: flex; gap: 45px; list-style: none; margin: 0; padding: 0;">
-            <li><a href="index.php" class="<?php echo ($current_action == 'index') ? 'active' : ''; ?>" style="text-decoration: none; font-weight: 700; color: #333; font-size: 1.1rem;">Inicio</a></li>
-            <li><a href="index.php?action=menu" class="<?php echo ($current_action == 'menu') ? 'active' : ''; ?>" style="text-decoration: none; font-weight: 700; color: #333; font-size: 1.1rem;">Menú</a></li>
+            <li><a href="index.php" class="<?php echo ($current_action == 'index') ? 'active' : ''; ?>">Inicio</a></li>
+            <li><a href="index.php?action=menu" class="<?php echo ($current_action == 'menu') ? 'active' : ''; ?>">Menú</a></li>
 
             <?php if (isset($_SESSION['user_rol']) && $_SESSION['user_rol'] === 'admin'): ?>
-                <li><a href="index.php?action=gestionar_productos" class="<?php echo ($current_action == 'gestionar_productos') ? 'active' : ''; ?>" style="text-decoration: none; font-weight: 700; color: #333; font-size: 1.1rem;">Gestionar</a></li>
-                <li><a href="index.php?action=ver_pedidos" class="<?php echo ($current_action == 'ver_pedidos') ? 'active' : ''; ?>" style="text-decoration: none; font-weight: 700; color: #333; font-size: 1.1rem;">Pedidos</a></li>
+                <li><a href="index.php?action=ver_pedidos" class="<?php echo ($current_action == 'ver_pedidos') ? 'active' : ''; ?>">Pedidos</a></li>
             <?php else: ?>
-                <li><a href="index.php?action=contacto" class="<?php echo ($current_action == 'contacto') ? 'active' : ''; ?>" style="text-decoration: none; font-weight: 700; color: #333; font-size: 1.1rem;">Contacto y Pedidos</a></li>
+                <li><a href="index.php?action=contacto" class="<?php echo ($current_action == 'contacto') ? 'active' : ''; ?>">Contacto y Pedidos</a></li>
             <?php endif; ?>
         </ul>
     </nav>

@@ -512,6 +512,11 @@ textarea {
     object-fit: cover;
     border: 2px solid var(--color-secundario);
 }
+.btn-pedir-ahora:hover {
+    background-color: #C39977 !important; /* Cambia a color café claro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
 /* --- Media Query para Responsividad (Móviles) --- */
 @media (max-width: 768px) {
