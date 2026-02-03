@@ -138,3 +138,15 @@ function togglePassword() {
         passInput.type = 'password';
     }
 }
+// Lógica para el Menú Hamburguesa Responsivo
+const mobileMenuBtn = document.querySelector('#mobile-menu');
+const navContainer = document.querySelector('.nav-container');
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        // Alternar clase para mostrar el menú
+        navContainer.classList.toggle('active');
+        // Alternar clase para la animación de la hamburguesa (X)
+        mobileMenuBtn.classList.toggle('is-active');
+    });
+}
