@@ -521,7 +521,7 @@ textarea {
    ESTILOS PARA MÓVIL (MENU HAMBURGUESA Y LOGIN)
    ======================================================= */
 
-/* 1. Ocultar el botón hamburguesa en PC */
+/* 1. Ocultar el botón hamburguesa en PC 
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -538,10 +538,10 @@ textarea {
 .menu-toggle .bar {
     width: 30px;
     height: 3px;
-    background-color: #6F4E37; /* Tu color principal */
+    background-color: #6F4E37; /* Tu color principal 
     border-radius: 10px;
     transition: all 0.3s linear;
-}
+}*/
 
 /* 2. Media Query para tablets y celulares */
 @media (max-width: 992px) {
