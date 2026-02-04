@@ -54,11 +54,19 @@ class AuthController {
     }
 
     public function logout() {
+        $_SESSION = array();
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
         session_destroy();
-        session_start(); // Iniciamos una nueva para mostrar el mensaje de despedida
-        $_SESSION['mensaje'] = "Has cerrado sesión correctamente.";
+        session_start();
+        $_SESSION['mensaje'] = "Has cerrado sesión correctamente. ¡Vuelve pronto!";
         $_SESSION['tipo_mensaje'] = "info";
-        header("Location: index.php");
+        header("Location: index.php?action=inicio"); 
         exit();
     }
 
