@@ -26,7 +26,7 @@ $current_action = isset($_GET['action']) ? $_GET['action'] : 'index';
             <?php if (isset($_SESSION['user_rol']) && $_SESSION['user_rol'] === 'admin'): ?>
                 <li><a href="index.php?action=ver_pedidos" class="<?php echo ($current_action == 'ver_pedidos') ? 'active' : ''; ?>">Pedidos</a></li>
             <?php else: ?>
-                <li><a href="index.php?action=contacto" class="<?php echo ($current_action == 'contacto') ? 'active' : ''; ?>">Contacto y Pedidos</a></li>
+                <li><a href="index.php?action=contacto" class="<?php echo ($current_action == 'contacto') ? 'active' : ''; ?>">Contactanos</a></li>
             <?php endif; ?>
         </ul>
     </nav>
