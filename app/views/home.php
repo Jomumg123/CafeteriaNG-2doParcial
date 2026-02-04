@@ -33,7 +33,7 @@
 
         <section class="info-section" style="display: flex; align-items: center; gap: 50px; padding: 80px 10%; background-color: #F5F5DC; flex-direction: row-reverse;">
             <div style="flex: 1;">
-                <img src="img/vision.jpg" alt="Misión y Visión" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); object-fit: cover;">
+                <img src="img/vision.png" alt="Misión y Visión" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); object-fit: cover;">
             </div>
             <div style="flex: 1;">
                 <div style="margin-bottom: 40px;">
