@@ -28,7 +28,7 @@ class Usuario {
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':telefono', $telefono);
-        $stmt->bindParam(':password', $password); // Aquí llega el hash automático
+        $stmt->bindParam(':password', $password);
         $stmt->bindParam(':rol', $rol);
 
         return $stmt->execute();
